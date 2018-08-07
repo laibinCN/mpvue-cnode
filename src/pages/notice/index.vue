@@ -70,6 +70,7 @@ export default {
   },
   onShow() {
     const accesstoken = wx.getStorageSync("accesstoken");
+    console.log("accesstoken=" + accesstoken);
     if (accesstoken) {
       this.getData();
     } else {

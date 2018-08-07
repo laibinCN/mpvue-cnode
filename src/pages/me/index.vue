@@ -42,15 +42,18 @@ export default {
       this.getData();
     },
     async getData() {
-      const me = wx.getStorageSync("me");
-      if (me) {
-        const res = await this.$http.get(`${api}/user/${me}`);
-        if (res.data.success) {
-          this.user = res.data.data;
-        }
-      } else {
-        console.log("no me");
-      }
+      const userInfo = wx.getStorageSync("accesstoken");
+      console.log(userInfo)
+      console.log(userInfo)
+      this.user = userInfo;
+      // if (me) {
+      //   const res = await this.$http.get(`${api}/user/${me}`);
+      //   if (res.data.success) {
+      //     this.user = res.data.data;
+      //   }
+      // } else {
+      //   console.log("no me");
+      // }
     }
   },
   mounted() {

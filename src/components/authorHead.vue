@@ -1,9 +1,14 @@
 <template>
   <div class='header'>
-    <img :src='user&&user.avatar_url' class='img'>
-    <span class='span'>{{user&&user.loginname}}</span>
+
+    <img :src='user&&user.avatarUrl' class='img'>
+    <span class='span'>{{user&&user.nickName}}</span>
     <span class='span'>积分:{{user&&user.score}}</span>
-    <span class='span'>C龄:{{user&&formatCreateAt}}</span>
+    <span class='span'>C龄:{{user.gender == 1 ?"男":"女"}}</span>
+    <span class='span'>language:{{user.language}}</span>
+    <span class='span'>city:{{user.city}}</span>
+    <span class='span'>province:{{user.province}}</span>
+
   </div>
 </template>
 <script>
